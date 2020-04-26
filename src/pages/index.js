@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 import Post from "../components/Post"
 import { Row, Col } from "reactstrap"
+import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
   <Layout>
@@ -20,6 +21,7 @@ const IndexPage = () => (
               <div>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                   <Post
+                    key={node.id}
                     title={node.frontmatter.title}
                     author={node.frontmatter.author}
                     path={node.frontmatter.path}
@@ -35,13 +37,7 @@ const IndexPage = () => (
         />
       </Col>
       <Col md="4">
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0,0,0,0.4)",
-          }}
-        ></div>
+        <Sidebar />
       </Col>
     </Row>
   </Layout>
