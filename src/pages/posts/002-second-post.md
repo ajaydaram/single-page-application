@@ -2,7 +2,6 @@
 title: "Second Post - Html"
 date: 2020-02-02 09:00:00
 author: "John Owen"
-path: "/second-post"
 image: ../../images/web.png
 tags:
   - html

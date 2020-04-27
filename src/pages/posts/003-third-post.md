@@ -2,7 +2,6 @@
 title: "Third Post - CSS"
 date: 2020-03-03 08:00:00
 author: "John Bay"
-path: "/third-post"
 image: ../../images/web.png
 tags:
   - Cascade

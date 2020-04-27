@@ -2,7 +2,6 @@
 title: "First Post - Introduction"
 date: 2020-01-01 07:00:00
 author: "John Bunyan"
-path: "/first-post"
 image: ../../images/web.png
 tags:
   - web development
