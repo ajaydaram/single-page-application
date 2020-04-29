@@ -1,7 +1,7 @@
 ---
 title: "Second Post - Html"
 date: 2020-02-02 09:00:00
-author: "John Owen"
+author: "John Calvin"
 image: ../../images/web.png
 tags:
   - html

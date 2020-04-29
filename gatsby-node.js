@@ -1,6 +1,6 @@
 const { slugify } = require("./src/util/utilityFunctions")
 const path = require("path")
-
+const authors = require("./src/util/authors")
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
@@ -42,6 +42,8 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           //passing slug for template to use to get post
           slug: node.fields.slug,
+          imageUrl: authors.find(x => x.name === node.frontmatter.author)
+            .imageUrl,
         },
       })
     })
