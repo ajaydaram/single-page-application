@@ -16,7 +16,9 @@ const postlist = props => {
           slug={node.fields.slug}
           title={node.frontmatter.title}
           author={node.frontmatter.date}
-          body={node.frontmatter.tags}
+          date={node.frontmatter.date}
+          body={node.excerpt}
+          tags={node.frontmatter.tags}
           fluid={node.frontmatter.image.childImageSharp.fluid}
         />
       ))}

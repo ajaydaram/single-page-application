@@ -1,17 +1,21 @@
 import React from "react"
-import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import Post from "../components/Post"
+import { graphql } from "gatsby"
+import authors from "../util/authors"
 
-const tagPosts = ({ data, pageContext }) => {
-  const { tag } = pageContext
+const authorPosts = ({ data, pageContext }) => {
   const { totalCount } = data.allMarkdownRemark
-  const pageHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "$"
-  } tagged with "${tag}"`
+  const author = authors.find(x => x.name === pageContext.authorName)
+  const pageHeader = `${totalCount} Posts by: ${pageContext.authorName}`
 
   return (
-    <Layout pageTitle={pageHeader}>
+    <Layout
+      pageTitle={pageHeader}
+      postAuthor={author}
+      authorImageFluid={data.file.childImageSharp.fluid}
+    >
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Post
           key={node.id}
@@ -27,11 +31,12 @@ const tagPosts = ({ data, pageContext }) => {
     </Layout>
   )
 }
-export const tagQuery = graphql`
-  query($tag: String!) {
+
+export const authorQuery = graphql`
+  query($authorName: String!, $imageUrl: String!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { author: { eq: $authorName } } }
     ) {
       totalCount
       edges {
@@ -44,7 +49,7 @@ export const tagQuery = graphql`
             tags
             image {
               childImageSharp {
-                fluid(maxWidth: 650, maxHeight: 371) {
+                fluid(maxWidth: 650) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -57,7 +62,14 @@ export const tagQuery = graphql`
         }
       }
     }
+    file(relativePath: { eq: $imageUrl }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 
-export default tagPosts
+export default authorPosts
