@@ -1,7 +1,7 @@
 ---
 title: "Third Post - CSS"
 date: 2020-03-03 08:00:00
-author: "Martin Luther"
+author: "Daram Ajay"
 image: ../../images/web.png
 tags:
   - Cascade

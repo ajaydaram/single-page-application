@@ -1,14 +1,14 @@
 const authors = [
   {
-    name: "Martin Luther",
-    imageUrl: "luther.jpg",
+    name: "Daram Ajay",
+    imageUrl: "hero-img.png",
     bio:
       "Martin Luther was known as the initiator of the Protestant Reformation...",
     facebook: "https://www.facebook.com/",
     twitter: "https://www.twitter.com/",
     instagram: "https://www.instagram.com/",
     google: "https://www.google.com/",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/ajay-daram-67242119b/",
   },
   {
     name: "John Calvin",
