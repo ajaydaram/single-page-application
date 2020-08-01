@@ -1,7 +1,7 @@
 ---
 title: "First Post - Introduction"
 date: 2020-01-01 07:00:00
-author: "Martin Luther"
+author: "Daram Ajay"
 image: ../../images/web.png
 tags:
   - web
