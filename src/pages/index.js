@@ -11,7 +11,7 @@ const IndexPage = () => {
   const postsPerpage = 2
   let numberOfPages
   return (
-    <Layout pageTitle="CodeBlog">
+    <Layout pageTitle="Telugu Reformed Blog">
       <SEO title="Home" />
 
       <StaticQuery
