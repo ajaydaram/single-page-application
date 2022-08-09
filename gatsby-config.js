@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Coding Blog`,
-    description: `The blog is created with the personal interest about Web development to publish articles for learning purpose`,
+    title: `Telugu Reformed literature`,
+    description: `The blog is created with the personal interest about promoting biblical faith to publish articles for learning purpose`,
     author: `@Ajay`,
   },
   plugins: [
