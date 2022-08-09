@@ -7,5 +7,5 @@ tags:
   - web
   - course
   - JavaSCript
-  -html
+  - html
 ---
